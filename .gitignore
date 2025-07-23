@@ -36,3 +36,5 @@ Desktop.ini
 
 # optional
 *.tgz
+
+.env
