@@ -45,12 +45,6 @@ export default function App() {
     if (e.key === 'Enter') handleSend();
   };
 
-	// 5. Make a new object to have a map to the response from #4
-	// this is because we need to check if the promptType is 'injected' to show the ad or not
-	const adMessage = {
-		prompted: latestResponse
-	}
-
   return (
     <div className="chat-container">
       <div className="messages">
@@ -58,7 +52,7 @@ export default function App() {
           <ChatMessage key={idx} sender={msg.sender} text={msg.text} />
         ))}
       </div>
-			{/* 6. Conditionally render the AdCard if the response is injected */}
+			{/* 5. Conditionally render the AdCard if the response is injected */}
 			{latestResponse?.promptType === 'injected' && (
 				<div className="mt-4">
 					<AdCard prompted={latestResponse} className="my-2" />
